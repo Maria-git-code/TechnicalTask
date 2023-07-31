@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Reports";
+    string temp1;
+    string temp2;
+    string temp3;
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>University data reports.</p>
+
+<select id="sel">
+        <option value="">Выберите год</option>
+		<option value="20">2020-2021</option>
+		<option value="21">2021-2022</option>
+</select>
+
+<script>
+    sel.onchange = function() {
+        if(this.value === "20"){
+            temp1 = this.value;
+        }
+        if (this.value === "21") {
+            temp1 = this.value;
+        }
+       
+    }
+</script>
+
+
+
+<select id="selt1" >
+    <option value="">Выберите месяц</option>
+    <option value="9">Сентябрь</option>
+    <option value="10">Октябрь</option>
+    <option value="11">Ноябрь</option>
+    <option value="12">Декабрь</option>
+</select>
+
+<script>
+    selt1.onchange = function () {
+        temp2 = this.value;
+        
+    }
+</script>
+
+
+
+<select id="selt2">
+    <option value="">Выберите месяц</option>
+    <option value="9">Сентябрь</option>
+    <option value="10">Октябрь</option>
+    <option value="11">Ноябрь</option>
+    <option value="12">Декабрь</option>
+    <option value="1">Январь</option>
+    <option value="2">Февраль</option>
+    <option value="3">Март</option>
+    <option value="4">Апрель</option>
+    <option value="5">Май</option>
+</select>
+
+<script>
+    selt2.onchange = function () {
+        temp3 = this.value;
+        
+    }
+</script>
+
+<form>
+    <input type="text" placeholder="Введите номер группы">
+</form>
+
+<button onclick="GetInfo">Показать отчет</button>
+
+
+
+
+

@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Directory"; 
+}
+
+@model WebApplication1.Models.ReportInfo
+
+<h1>@ViewData["Title"]</h1>
+
+<p>University data directory.</p>
+
+<select id="sel">
+        <option value="">Выберите год</option>
+        <option value="20">2020-2021</option>
+        <option value="21">2021-2022</option>
+</select>
+
+<script>
+    sel.onchange = function() {
+        if(this.va lue === "20"){
+            temp1 = this.value;
+            @Model.year = this.value;
+        }
+        if (this.value === "21") {
+            temp1 = this.value;
+            @Model.year = this.value;
+        }
+
+    }
+</script>
+
+
+
+<select id="selt1" >
+    <option value="">Выберите месяц</option>
+    <option value="9">Сентябрь</option>
+    <option value="10">Октябрь</option>
+    <option value="11">Ноябрь</option>
+    <option value="12">Декабрь</option>
+</select>
+
+<script>
+    selt1.onchange = function () {
+        temp2 = this.value;
+
+    }
+</script>
+
+
+
+<select id="selt2">
+    <option value="">Выберите месяц</option>
+    <option value="9">Сентябрь</option>
+    <option value="10">Октябрь</option>
+    <option value="11">Ноябрь</option>
+    <option value="12">Декабрь</option>
+    <option value="1">Январь</option>
+    <option value="2">Февраль</option>
+    <option value="3">Март</option>
+    <option value="4">Апрель</option>
+    <option value="5">Май</option>
+</select>
+
+<script>
+    selt2.onchange = function () {
+        temp3 = this.value;
+        
+    }
+</script>
+
+<form method="post" asp-controller="Home" asp-action="Update">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="group"/>
+        <input type="text" class="form-control" asp-for="year"/>
+        <input type="text" class="form-control" asp-for="month1"/>
+        <input type="text" class="form-control" asp-for="month2"/>
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+</form>
